@@ -49,17 +49,17 @@
   
   <style>
     :root {
-      --primary-color: #6366f1;
-      --secondary-color: #8b5cf6;
-      --accent-color: #a78bfa;
+      --primary-color: #fbbf24;
+      --secondary-color: #f59e0b;
+      --accent-color: #fcd34d;
       --text-primary: #f8fafc;
       --text-secondary: #cbd5e1;
       --bg-primary: #0f172a;
       --bg-secondary: #1e293b;
       --bg-card: #1e293b;
       --border-color: #334155;
-      --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
-      --gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+      --gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fcd34d 100%);
+      --gradient-subtle: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
     }
     
     * {
@@ -149,6 +149,28 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .logo img {
+        height: 35px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo img {
+        height: 30px;
+      }
     }
     
     .nav-menu {
@@ -196,6 +218,8 @@
       flex-direction: column;
       cursor: pointer;
       gap: 5px;
+      z-index: 1001;
+      position: relative;
     }
     
     .nav-toggle span {
@@ -203,6 +227,18 @@
       height: 3px;
       background: var(--text-primary);
       transition: all 0.3s ease;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
     }
     
     /* Hero Section */
@@ -234,7 +270,7 @@
       right: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(251, 191, 36, 0.08) 0%, transparent 70%);
       animation: rotate 20s linear infinite;
       pointer-events: none;
       /* Ensure it doesn't cause overflow - parent has overflow: hidden */
@@ -260,6 +296,184 @@
         padding: 0 0.5rem;
         width: 100%;
         max-width: 100%;
+      }
+    }
+    
+    /* Animated Developer Icons */
+    .hero-animations {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    
+    .dev-icon {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: rgba(251, 191, 36, 0.1);
+      border: 2px solid rgba(251, 191, 36, 0.3);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      backdrop-filter: blur(10px);
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    
+    .dev-icon:hover {
+      opacity: 1;
+      transform: scale(1.1);
+      background: rgba(251, 191, 36, 0.2);
+      border-color: var(--primary-color);
+    }
+    
+    .dev-icon:nth-child(1) {
+      top: 15%;
+      left: 10%;
+      animation: float 8s ease-in-out infinite, pulse 3s ease-in-out infinite;
+      animation-delay: 0s;
+    }
+    
+    .dev-icon:nth-child(2) {
+      top: 25%;
+      right: 15%;
+      animation: float 7s ease-in-out infinite, pulse 3.5s ease-in-out infinite;
+      animation-delay: 1s;
+    }
+    
+    .dev-icon:nth-child(3) {
+      bottom: 30%;
+      left: 8%;
+      animation: float 9s ease-in-out infinite, pulse 4s ease-in-out infinite;
+      animation-delay: 2s;
+    }
+    
+    .dev-icon:nth-child(4) {
+      bottom: 20%;
+      right: 12%;
+      animation: float 8.5s ease-in-out infinite, pulse 3.2s ease-in-out infinite;
+      animation-delay: 1.5s;
+    }
+    
+    .dev-icon:nth-child(5) {
+      top: 50%;
+      left: 5%;
+      animation: float 7.5s ease-in-out infinite, pulse 3.8s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+    
+    .dev-icon:nth-child(6) {
+      top: 40%;
+      right: 8%;
+      animation: float 8s ease-in-out infinite, pulse 3.3s ease-in-out infinite;
+      animation-delay: 2.5s;
+    }
+    
+    .dev-icon:nth-child(7) {
+      top: 60%;
+      left: 15%;
+      animation: float 7.8s ease-in-out infinite, pulse 3.6s ease-in-out infinite;
+      animation-delay: 3s;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-25px) translateX(15px) rotate(8deg);
+      }
+      50% {
+        transform: translateY(-15px) translateX(-15px) rotate(-8deg);
+      }
+      75% {
+        transform: translateY(-35px) translateX(8px) rotate(5deg);
+      }
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 0.9;
+      }
+    }
+    
+    .dev-icon::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    
+    .dev-icon:hover::before {
+      opacity: 0.1;
+    }
+    
+    @media (max-width: 768px) {
+      .dev-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+      
+      .dev-icon:nth-child(1) {
+        top: 10%;
+        left: 5%;
+      }
+      
+      .dev-icon:nth-child(2) {
+        top: 15%;
+        right: 5%;
+      }
+      
+      .dev-icon:nth-child(3) {
+        bottom: 25%;
+        left: 3%;
+      }
+      
+      .dev-icon:nth-child(4) {
+        bottom: 15%;
+        right: 5%;
+      }
+      
+      .dev-icon:nth-child(5) {
+        top: 45%;
+        left: 2%;
+      }
+      
+      .dev-icon:nth-child(6) {
+        top: 35%;
+        right: 3%;
+      }
+      
+      .dev-icon:nth-child(7) {
+        top: 55%;
+        left: 4%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .dev-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        opacity: 0.5;
       }
     }
     
@@ -411,12 +625,12 @@
     .btn-primary {
       background: var(--gradient);
       color: var(--text-primary);
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.25);
+      box-shadow: 0 10px 30px rgba(251, 191, 36, 0.25);
     }
     
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(99, 102, 241, 0.35);
+      box-shadow: 0 15px 40px rgba(251, 191, 36, 0.35);
     }
     
     .btn-outline {
@@ -484,7 +698,7 @@
       color: var(--text-primary);
       transform: translateX(-5px) scale(1.1);
       border-color: transparent;
-      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
     }
     
     @media (max-width: 768px) {
@@ -671,7 +885,7 @@
     .skill-card:hover {
       transform: translateY(-10px);
       border-color: var(--secondary-color);
-      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+      box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2);
     }
     
     .skill-header {
@@ -768,7 +982,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(139, 92, 246, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.95) 0%, rgba(245, 158, 11, 0.95) 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -964,7 +1178,7 @@
     
     .portfolio-drawer-btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 5px 15px rgba(251, 191, 36, 0.4);
     }
     
     /* Mobile Drawer (Bottom) */
@@ -1131,24 +1345,176 @@
     /* Responsive */
     @media (max-width: 768px) {
       .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        flex-direction: column;
-        background: rgba(15, 23, 42, 0.98);
-        backdrop-filter: blur(12px);
-        width: 100%;
-        padding: 2rem;
-        transition: left 0.3s ease;
-        border-top: 1px solid var(--border-color);
+        position: fixed !important;
+        top: 0 !important;
+        left: -100% !important;
+        right: auto !important;
+        flex-direction: column !important;
+        background: rgba(15, 23, 42, 0.98) !important;
+        backdrop-filter: none !important;
+        width: 85% !important;
+        max-width: 320px !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        padding: 100px 1rem 2rem 1rem !important;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        border-right: 2px solid var(--border-color) !important;
+        z-index: 9999 !important;
+        overflow-y: auto !important;
+        overflow-x: visible !important;
+        box-shadow: 4px 0 30px rgba(0, 0, 0, 0.5) !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+        gap: 0 !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        color: #ffffff !important;
+        text-indent: 0 !important;
+        font-size: 1rem !important;
+        isolation: isolate !important;
+        transform: translateZ(0) !important;
+        will-change: transform !important;
       }
       
       .nav-menu.active {
+        left: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: flex !important;
+      }
+      
+      .nav-menu li {
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+        padding: 0 1.5rem !important;
+        list-style: none !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        min-height: 50px !important;
+      }
+      
+      .nav-menu .nav-link {
+        display: block !important;
+        padding: 1.25rem 1.5rem !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        text-align: left !important;
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        border-bottom: 1px solid rgba(51, 65, 85, 0.5) !important;
+        border-radius: 8px !important;
+        margin: 0 !important;
+        transition: all 0.3s ease !important;
+        color: #ffffff !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        text-decoration: none !important;
+        position: relative !important;
+        z-index: 10000 !important;
+        background: rgba(30, 41, 59, 0.9) !important;
+        background-clip: padding-box !important;
+        -webkit-background-clip: padding-box !important;
+        line-height: 1.6 !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+        transform: translateZ(0) !important;
+        will-change: auto !important;
+        mix-blend-mode: normal !important;
+        clip: auto !important;
+        clip-path: none !important;
+        min-height: 50px !important;
+      }
+      
+      .nav-menu .nav-link::before,
+      .nav-menu .nav-link::after {
+        display: none !important;
+        content: none !important;
+        width: 0 !important;
+        height: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+      }
+      
+      .nav-menu .nav-link * {
+        color: #ffffff !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        -webkit-text-fill-color: #ffffff !important;
+        background-clip: padding-box !important;
+        -webkit-background-clip: padding-box !important;
+      }
+      
+      .nav-menu .nav-link span {
+        color: #ffffff !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+        -webkit-text-fill-color: #ffffff !important;
+        background-clip: padding-box !important;
+        -webkit-background-clip: padding-box !important;
+        position: relative !important;
+        z-index: 10001 !important;
+        line-height: 1.6 !important;
+        width: 100% !important;
+        min-height: 1.5em !important;
+      }
+      
+      
+      .nav-menu .nav-link:first-child {
+        margin-top: 0 !important;
+      }
+      
+      .nav-menu .nav-link:hover,
+      .nav-menu .nav-link.active {
+        background: var(--gradient-subtle) !important;
+        color: #fbbf24 !important;
+        border-bottom-color: #fbbf24 !important;
+        transform: translateX(5px) !important;
+        padding-left: 1.5rem !important;
+      }
+      
+      .nav-menu .nav-link::after {
+        display: none !important;
+      }
+      
+      /* Backdrop overlay for mobile menu */
+      .nav-menu-backdrop {
+        position: fixed;
+        top: 0;
         left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+        pointer-events: none;
+      }
+      
+      .nav-menu-backdrop.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
       }
       
       .nav-toggle {
         display: flex;
+        position: relative;
+        z-index: 10000;
       }
       
       .about-content,
@@ -1250,16 +1616,41 @@
     <div class="nav-container">
       <a href="#home" class="logo" id="navLogo">SG</a>
       <ul class="nav-menu" id="navMenu"></ul>
-      <div class="nav-toggle" id="navToggle">
+      <!-- <div class="nav-toggle" id="navToggle">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> -->
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+    <!-- Animated Developer Icons -->
+    <div class="hero-animations">
+      <div class="dev-icon" title="Web Development">
+        <i class="fas fa-globe"></i>
+      </div>
+      <div class="dev-icon" title="Mobile Development">
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+      <div class="dev-icon" title="Code & Programming">
+        <i class="fas fa-code"></i>
+      </div>
+      <div class="dev-icon" title="Database">
+        <i class="fas fa-database"></i>
+      </div>
+      <div class="dev-icon" title="UI/UX Design">
+        <i class="fas fa-paint-brush"></i>
+      </div>
+      <div class="dev-icon" title="Server & Backend">
+        <i class="fas fa-server"></i>
+      </div>
+      <div class="dev-icon" title="AI & Machine Learning">
+        <i class="fas fa-brain"></i>
+      </div>
+    </div>
+    
     <div class="hero-content">
       <p class="hero-greeting" id="heroGreeting"></p>
       <h1 class="hero-name" id="heroName"></h1>
@@ -1523,7 +1914,7 @@
     ]
   },
   "navigation": {
-    "logo": "SG",
+    "logo": "img/info-img.jpg",
     "links": [
       {
         "text": "Home",
@@ -1590,18 +1981,61 @@
       const navMenu = document.getElementById('navMenu');
       const data = portfolioData.navigation;
       
-      navLogo.textContent = data.logo;
+      // Clear logo content
+      navLogo.innerHTML = '';
+      
+      // Check if logo is an image path or text
+      if (data.logo && (data.logo.endsWith('.jpg') || data.logo.endsWith('.jpeg') || data.logo.endsWith('.png') || data.logo.endsWith('.svg') || data.logo.endsWith('.gif') || data.logo.endsWith('.webp'))) {
+        // Render as image
+        const img = document.createElement('img');
+        img.src = data.logo;
+        img.alt = 'Logo';
+        img.className = 'logo-img';
+        navLogo.appendChild(img);
+      } else {
+        // Render as text
+        navLogo.textContent = data.logo || 'SG';
+      }
+      
       navMenu.innerHTML = '';
       
       data.links.forEach((link, index) => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = link.href;
-        a.textContent = link.text;
         a.className = 'nav-link' + (index === 0 ? ' active' : '');
+        a.setAttribute('aria-label', link.text || 'Navigation link');
         if (link.external) {
           a.target = '_blank';
         }
+        
+        // Create span for text (this approach worked with debugging)
+        const span = document.createElement('span');
+        span.textContent = link.text || '';
+        span.style.setProperty('color', '#ffffff', 'important');
+        span.style.setProperty('display', 'block', 'important');
+        span.style.setProperty('visibility', 'visible', 'important');
+        span.style.setProperty('opacity', '1', 'important');
+        span.style.setProperty('font-size', '1.15rem', 'important');
+        span.style.setProperty('font-weight', '600', 'important');
+        span.style.setProperty('text-shadow', '0 2px 4px rgba(0, 0, 0, 0.8)', 'important');
+        span.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
+        span.style.setProperty('background-clip', 'padding-box', 'important');
+        span.style.setProperty('-webkit-background-clip', 'padding-box', 'important');
+        span.style.setProperty('position', 'relative', 'important');
+        span.style.setProperty('z-index', '10001', 'important');
+        span.style.setProperty('width', '100%', 'important');
+        span.style.setProperty('line-height', '1.6', 'important');
+        
+        a.appendChild(span);
+        
+        // Ensure link container is visible
+        a.style.setProperty('color', '#ffffff', 'important');
+        a.style.setProperty('display', 'block', 'important');
+        a.style.setProperty('visibility', 'visible', 'important');
+        a.style.setProperty('opacity', '1', 'important');
+        a.style.setProperty('-webkit-text-fill-color', '#ffffff', 'important');
+        
         li.appendChild(a);
         navMenu.appendChild(li);
       });
@@ -1818,6 +2252,107 @@
       `;
     }
 
+    // Initialize mobile menu toggle
+    let clickOutsideHandler = null;
+    let menuInitialized = false;
+    
+    function initializeMobileMenu() {
+      const navToggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (!navToggle || !navMenu) {
+        console.error('Navigation elements not found');
+        return;
+      }
+      
+      // Prevent duplicate initialization
+      if (menuInitialized) {
+        return;
+      }
+      menuInitialized = true;
+      
+      // Create backdrop element if it doesn't exist
+      let backdrop = document.querySelector('.nav-menu-backdrop');
+      if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.className = 'nav-menu-backdrop';
+        document.body.appendChild(backdrop);
+      }
+      
+      // Remove previous click outside handler if it exists
+      if (clickOutsideHandler) {
+        document.removeEventListener('click', clickOutsideHandler);
+      }
+      
+      // Function to open menu
+      function openMenu() {
+        navMenu.classList.add('active');
+        navToggle.classList.add('active');
+        backdrop.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        navMenu.style.left = '0';
+        navMenu.style.visibility = 'visible';
+        navMenu.style.opacity = '1';
+        navMenu.style.display = 'flex';
+      }
+      
+      // Function to close menu
+      function closeMenu() {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        backdrop.classList.remove('active');
+        document.body.style.overflow = '';
+        navMenu.style.left = '-100%';
+      }
+      
+      // Attach click event to toggle button
+      navToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        
+        const isActive = navMenu.classList.contains('active');
+        if (isActive) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+      
+      // Close menu when clicking on backdrop
+      backdrop.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMenu();
+      });
+      
+      // Close menu when clicking on a link (use event delegation)
+      const menuClickHandler = (e) => {
+        const link = e.target.closest('.nav-link');
+        if (link) {
+          closeMenu();
+        }
+      };
+      
+      navMenu.addEventListener('click', menuClickHandler);
+      
+      // Close menu when clicking outside (but not on backdrop, as that's handled separately)
+      clickOutsideHandler = (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target) &&
+            !backdrop.contains(e.target)) {
+          closeMenu();
+        }
+      };
+      document.addEventListener('click', clickOutsideHandler);
+      
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    }
+
     // Render all content
     function renderAllContent() {
       renderNavigation();
@@ -1830,6 +2365,9 @@
       
       // Initialize typing effect
       initializeTypingEffect();
+      
+      // Initialize mobile menu after navigation is rendered
+      initializeMobileMenu();
       
       // Re-initialize portfolio drawer after rendering
       initializePortfolioDrawer();
@@ -1974,22 +2512,8 @@
       }
     });
 
-    // Mobile menu toggle
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-    
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      navToggle.classList.toggle('active');
-    });
-
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-      });
-    });
+    // Mobile menu toggle is now initialized in initializeMobileMenu() function
+    // which is called after navigation is rendered
 
     // Smooth scrolling - use event delegation
     document.addEventListener('click', function(e) {
