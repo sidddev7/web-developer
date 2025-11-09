@@ -1,8 +1,41 @@
 /*!
-  * Item: Kitzu
-  * Description: Personal Portfolio Template
-  * Author/Developer: Exill
-  * Author/Developer URL: https://themeforest.net/user/exill
-  * Version: v2.0.0
-  * License: Themeforest Standard Licenses: https://themeforest.net/licenses
-  */
+ * Custom CSS for Siddhrajsinh Gohil Portfolio
+ * Modern Portfolio Website
+ */
+
+/* Additional custom styles can be added here */
+/* Main styles are embedded in home.html for better performance */
+
+/* Smooth transitions for all interactive elements */
+a, button, .btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary, #1e293b);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f8fafc;
+}
+
+::-moz-selection {
+  background: rgba(99, 102, 241, 0.3);
+  color: #f8fafc;
+}
