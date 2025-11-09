@@ -1,0 +1,207 @@
+{
+  "personal": {
+    "firstName": "Siddhrajsinh",
+    "lastName": "Gohil",
+    "fullName": "Siddhrajsinh Gohil",
+    "age": 21,
+    "location": "Surat, India",
+    "email": "sidraj2019@gmail.com",
+    "phone": "+91-81608-43517",
+    "title": "Full Stack Developer",
+    "greeting": "Hello, I'm",
+    "aboutImage": "img/info-img.jpg",
+    "cvUrl": "https://tinly.vercel.app/siddhraj-resume-d"
+  },
+  "hero": {
+    "typingWords": [
+      "MERN Stack Developer",
+      "React.js Developer",
+      "Node.js Developer",
+      "Full Stack Developer",
+      "UI/UX Designer"
+    ]
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "heading": "Who am I?",
+    "description": [
+      "I'm Siddhrajsinh Gohil, a visual UX/UI Designer and Web Developer based in Surat, India. I have been building noteworthy UX/UI designs and websites, which comply with the latest design trends.",
+      "I help convert a vision and an idea into meaningful and useful products. Having a sharp eye for product evolution helps me prioritize tasks, iterate fast and deliver faster."
+    ]
+  },
+  "resume": {
+    "title": "My Resume",
+    "subtitle": "Check out my education and experience",
+    "education": [
+      {
+        "title": "Computer Science",
+        "institution": "Central Board of Secondary Education",
+        "period": "2015 - 2017",
+        "description": "Learned the basic and advanced concepts of Physics and Mathematics"
+      },
+      {
+        "title": "Bachelor Degree",
+        "institution": "Gujarat Technological University",
+        "period": "2017 - 2021",
+        "description": "Learned about Data structures and algorithms to make super fast Real Applications"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Full Stack Software Engineer",
+        "company": "Crest Infosystems",
+        "period": "2021 - Present",
+        "description": "I am responsible for developing and maintaining full stack applications created on MERN stack"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "HTML/CSS",
+      "icon": "fab fa-html5",
+      "percentage": 80
+    },
+    {
+      "name": "JavaScript",
+      "icon": "fab fa-js",
+      "percentage": 80
+    },
+    {
+      "name": "React.js",
+      "icon": "fab fa-react",
+      "percentage": 70
+    },
+    {
+      "name": "Node.js / Express.js",
+      "icon": "fab fa-node-js",
+      "percentage": 75
+    },
+    {
+      "name": "TypeScript",
+      "icon": "fab fa-js",
+      "percentage": 70
+    },
+    {
+      "name": "MongoDB",
+      "icon": "fas fa-database",
+      "percentage": 75
+    }
+  ],
+  "portfolio": {
+    "title": "My Portfolio",
+    "subtitle": "Showcasing some of my best work",
+    "items": [
+      {
+        "title": "Potential Engineers - Surat",
+        "image": "img/item-1.jpg",
+        "url": "https://potentialengineer.github.io/website/"
+      },
+      {
+        "title": "My Gifty",
+        "image": "img/item-2.jpg",
+        "url": "https://www.mygifty.in/"
+      },
+      {
+        "title": "Siddhrajsinh Gohil Web Developer",
+        "image": "img/item-8.jpg",
+        "url": "https://siddhrajsinggohil.netlify.app/"
+      },
+      {
+        "title": "Potential Engineer - Mumbai",
+        "image": "img/item-3.jpg",
+        "url": "https://potentialengineer.github.io/mumbai/home.html"
+      },
+      {
+        "title": "Siddhrajsinh Gohil Portfolio",
+        "image": "img/item-7.jpg",
+        "url": "https://sidddev7.github.io/web/home.html"
+      },
+      {
+        "title": "Direct Whatsapp",
+        "image": "img/item-4.jpg",
+        "url": "https://direct-whatsap.netlify.app/"
+      },
+      {
+        "title": "ChatGpt 2.0",
+        "image": "img/chatgpt2.jpg",
+        "url": "https://chatgpt2-theta.vercel.app/"
+      },
+      {
+        "title": "Shiv technology",
+        "image": "img/shivtechnology.jpg",
+        "url": "https://shiv-technology.netlify.app/"
+      },
+      {
+        "title": "Shiv Consultancy",
+        "image": "img/shiv-consultancy.jpeg",
+        "url": "https://shiv-consultancy-stage.netlify.app/"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Feel free to contact me anytime",
+    "availability": {
+      "title": "Always Available",
+      "description": "Always available for freelance work if the right project comes along. Feel free to contact me!"
+    }
+  },
+  "social": {
+    "links": [
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/siddhrajsinh-gohil/",
+        "icon": "fab fa-linkedin-in",
+        "ariaLabel": "LinkedIn"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/sidddev7",
+        "icon": "fab fa-github",
+        "ariaLabel": "GitHub"
+      },
+      {
+        "name": "Stack Overflow",
+        "url": "https://stackoverflow.com/users/13054898/siddhraj-gohil",
+        "icon": "fab fa-stack-overflow",
+        "ariaLabel": "Stack Overflow"
+      }
+    ]
+  },
+  "navigation": {
+    "logo": "SG",
+    "links": [
+      {
+        "text": "Home",
+        "href": "#home"
+      },
+      {
+        "text": "About",
+        "href": "#about"
+      },
+      {
+        "text": "Resume",
+        "href": "#resume"
+      },
+      {
+        "text": "Skills",
+        "href": "#skills"
+      },
+      {
+        "text": "Portfolio",
+        "href": "#portfolio"
+      },
+      {
+        "text": "Contact",
+        "href": "#contact"
+      },
+      {
+        "text": "SEO Expert",
+        "href": "https://sidddev7.github.io/web/home.html",
+        "external": true
+      }
+    ]
+  }
+}
+
