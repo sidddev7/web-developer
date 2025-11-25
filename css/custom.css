@@ -7,7 +7,9 @@
 /* Main styles are embedded in home.html for better performance */
 
 /* Smooth transitions for all interactive elements */
-a, button, .btn {
+a,
+button,
+.btn {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -38,4 +40,45 @@ a, button, .btn {
 ::-moz-selection {
   background: rgba(251, 191, 36, 0.3);
   color: #f8fafc;
+}
+
+/* Fluid Cursor Styles */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color, #fbbf24);
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary-color, #fbbf24);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Hide default cursor on body when custom cursor is active */
+body {
+  cursor: none;
+}
+
+/* Ensure interactive elements still show pointer if needed, 
+   but we want the custom cursor to be the main indicator.
+   We can add a class to scale the cursor on hover. */
+
+body.hovering .cursor-outline {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(251, 191, 36, 0.1);
+  border-color: transparent;
 }
